@@ -1,0 +1,211 @@
+#root {
+  margin: 0 auto;
+}
+
+@property --bg-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+
+.site-header-wrapper {
+  position: fixed; /* Fixed position stays in place */
+  top: 10px;
+  right: 5px;
+  width: 12.5%;
+  padding: 12px; /* Adjust padding for aesthetic purposes */
+  height: 60px;  /* Fixed height for the wrapper */
+  z-index: 1; /* Behind the header */
+  display: inline-block; /* Keep it compact */
+  border-radius: 12px; /* Slightly larger to ensure it's a "border" */
+  background: conic-gradient(from var(--bg-angle), rgb(147, 147, 241), rgb(103, 103, 228)); /* Directly set conic gradient here */
+  animation: spin 3s  infinite; /* Apply the spinning animation */
+}
+
+/* Header styles */
+.site-header {
+  position: fixed; /* Fixed position stays in place */
+  top: 10px;
+  right: 10px;
+  width: 12.5%;
+  height: 60px;  /* Fixed height for the header */
+  background-color: #ffffef;
+  border-radius: 10px;
+  overflow: hidden; /* Ensure the header content doesn't overflow */
+  z-index: 1; /* Header content stays on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;  /* Adjust padding for aesthetic purposes */
+}
+
+/* Navigation styles */
+.nav {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2; /* Ensure nav stays above everything else */
+}
+.about > .container{
+  width: 45%;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  flex: 1 1 250px;
+  background-color: rgb(103, 103, 228);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 250px;
+}
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  list-style: none;
+}
+
+.two-column-list li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.card li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.card i {
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #0077ff;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes appear2 {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes appear3 {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+.hero{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, rgb(147, 147, 241), rgb(103, 103, 228));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+.projects{
+  width: 100%;
+  background: linear-gradient(to right, rgb(147, 147, 241), rgb(103, 103, 228));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+.gachess{
+  height: 100vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+}
+.about{
+  padding: 20px;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+.projectItem{
+  color: black;
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+}
+.block {
+  height: 200px;
+  width: 300px;
+  margin: 50px;
+  border: 0.5mm solid black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: rgb(157, 86, 247);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+.slideLeft{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+.slideRight{
+  animation: appear2 linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
