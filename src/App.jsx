@@ -2,7 +2,16 @@ import './App.css'
 import Header from './components/Header'
 
 function App() {
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formStatus = document.querySelector('.form-status');
+    formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
+    formStatus.classList.add('success');
+    setTimeout(() => {
+      formStatus.textContent = '';
+      formStatus.classList.remove('success');
+    }, 3000);
+  }
   return (
     <>
       <Header />
@@ -56,7 +65,7 @@ function App() {
         <div className="container">
           <h2>My Skills</h2>
           <ul class="skills">
-            <div class="card">
+            <div class="card slideLeft">
               <li><strong>Frontend:</strong></li>
               <li><i class="fab fa-html5"></i> HTML</li>
               <li><i class="fab fa-css3-alt"></i> CSS</li>
@@ -65,7 +74,7 @@ function App() {
               <li><i class="fas fa-paint-brush"></i> Tailwind CSS</li>
               <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
             </div>
-            <div class="card">
+            <div class="card slideRight">
               <li><strong>Backend:</strong></li>
               <ul class="two-column-list">
                 <li><i class="fab fa-node"></i> Node.js</li>
@@ -79,7 +88,7 @@ function App() {
               </ul>
             </div>
 
-            <div class="card">
+            <div class="card slideUp">
               <li><strong>Misc:</strong></li>
               <li><i class="fab fa-git-alt"></i> Git</li>
               <li><i class="fab fa-python"></i> Python</li>
@@ -91,16 +100,36 @@ function App() {
         </div>
       </section>
       <section className="contact" id="contact">
-        <div className="container">
+        <div className="contact-container">
           <h2>Contact Me</h2>
-          <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
+          
+          <form
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+            className="contact-form"
+          >
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Your Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Your Message</label>
+              <textarea name="message" id="message" rows="5" required></textarea>
+            </div>
             <button type="submit">Send Message</button>
           </form>
+
+          <p className="email-fallback">
+            Prefer your email app? <a href="mailto:nguyenvalbert@gmail.com">Nguyenvalbert@gmail.com</a>
+          </p>
         </div>
       </section>
+
+
     </>
   )
 }

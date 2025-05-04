@@ -134,11 +134,11 @@
 @keyframes appear3 {
   from {
     opacity: 0;
-    clip-path: inset(100% 100% 0 0);
+    transform: translateY(100px);
   }
   to {
     opacity: 1;
-    clip-path: inset(0 0 0 0);
+    transform: translateY(0px);
   }
 }
 .hero{
@@ -208,4 +208,46 @@
   animation: appear2 linear;
   animation-timeline: view();
   animation-range: entry 0% cover 20%;
+}
+.slideUp{
+  animation: appear3 linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+.contact{
+  width: 100%;
+  background: linear-gradient(to right, rgb(147, 147, 241), rgb(103, 103, 228));
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #222;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #444;
 }
