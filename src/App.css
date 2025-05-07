@@ -141,6 +141,16 @@
     transform: translateY(0px);
   }
 }
+@keyframes appear4 {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
 .hero{
   height: 100vh;
   width: 100%;
@@ -153,7 +163,7 @@
 }
 .projects{
   width: 100%;
-  background: linear-gradient(to right, rgb(147, 147, 241), rgb(103, 103, 228));
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,8 +180,7 @@
 }
 .about{
   padding: 20px;
-  width: 100%;
-  background: black;
+  background: linear-gradient(to right, rgb(147, 147, 241), rgb(103, 103, 228));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,4 +259,10 @@
 
 .contact-form button:hover {
   background: #444;
+}
+.together{
+  justify-content: center;
+}
+.together > *{
+  padding: 0 10px;
 }
