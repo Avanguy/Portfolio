@@ -1,9 +1,8 @@
 import React from 'react'
-
+import TodoGif from '../assets/TodoGif.gif'
 const Projects = () => {
   return (
     <section className="projects" id="projects">
-    <div className="container">
       <div className="project-list">
         <h2>Other Projects</h2>
         <div className="projectItem slideLeft">
@@ -13,6 +12,8 @@ const Projects = () => {
             <p>A full-stack MERN project that allows users to manage their personal finances by tracking income and expenses. 
             <br/><br/>The app provides real-time data updates, user authentication, and a dynamic UI with graphs to visualize spending patterns.</p>
             <div>
+              <button>Live Demo</button>
+              <button>Code View</button>
               <ul className="tech-stack">
                 <li><i className="fab fa-html5"></i> HTML</li>
                 <li><i className="fab fa-js"></i> JavaScript</li>
@@ -32,10 +33,16 @@ const Projects = () => {
           </div>
         </div>
         <div className="projectItem slideLeft">
-          <img src="https://via.placeholder.com/150" alt="Todo List Image" />
+          <img src={TodoGif} alt="Todo List Image" />
           <div>
             <h3>Todo List</h3>
-            <p>A simple To-Do List built with React to learn and practice core React concepts.</p>
+            <p>A To-Do List built with React to learn and practice core React concepts.</p>
+            <a href="https://live-demo-url.com" target="_blank" rel="noopener noreferrer">
+              <button>Live Demo</button>
+            </a>
+            <a href="https://github.com/Avanguy/todo" target="_blank" rel="noopener noreferrer">
+              <button>Code View</button>
+            </a>
             <ul className="tech-stack">
               <li><i className="fab fa-html5"></i> HTML</li>
               <li><i className="fab fa-css3-alt"></i> CSS</li>
@@ -51,6 +58,8 @@ const Projects = () => {
             <p>A weather app built with vanilla JavaScript to strengthen fundamentals and work without React.</p>
             <p>Using the OpenWeather API</p>
             <div>
+              <button>Live Demo</button>
+              <button>Code View</button>
               <ul className="tech-stack">
                 <li><i class="fab fa-html5"></i> HTML</li>
                 <li><i class="fab fa-css3-alt"></i> CSS</li>
@@ -60,7 +69,6 @@ const Projects = () => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   </section>
   )

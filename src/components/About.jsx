@@ -11,7 +11,7 @@ const About = () => {
           <h2>My Skills</h2>
           <ul class="skills">
             <div class="card slideLeft">
-              <li><strong>Frontend:</strong></li>
+              <strong>Frontend:</strong>
               <li><i class="fab fa-html5"></i> HTML</li>
               <li><i class="fab fa-css3-alt"></i> CSS</li>
               <li><i class="fab fa-js"></i> JavaScript</li>
@@ -20,7 +20,7 @@ const About = () => {
               <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
             </div>
             <div class="card slideRight">
-              <li><strong>Backend:</strong></li>
+              <strong>Backend:</strong>
               <ul class="two-column-list">
                 <li><i class="fab fa-node"></i> Node.js</li>
                 <li><i class="fas fa-server"></i> Express</li>
@@ -34,7 +34,7 @@ const About = () => {
             </div>
 
             <div class="card slideUp">
-              <li><strong>Misc:</strong></li>
+              <strong>Misc:</strong>
               <li><i class="fab fa-git-alt"></i> Git</li>
               <li><i class="fab fa-python"></i> Python</li>
               <li><i class="fab fa-java"></i> Java</li>
